@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#fff0f8" />
+  <meta name="description" content="Pink Dreamy Website — an original pastel fashion and fantasy gallery." />
+  <title>Pink Dreamy Website ✧</title>
+  <link rel="preconnect" href="https://images.unsplash.com" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root{--pink:#f46aa8;--deep:#a92b68;--ink:#3d2332;--muted:#927486;--cream:#fff9fc;--line:#f3dce8;--lilac:#eee5ff;--shadow:0 18px 55px rgba(148,53,100,.12)}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:radial-gradient(circle at 10% 0%,#ffe0f0 0,transparent 28rem),radial-gradient(circle at 96% 14%,#e9ddff 0,transparent 25rem),var(--cream);color:var(--ink);font-family:'DM Sans',sans-serif;min-height:100vh}
+    body:before{content:"✧  ·  ✦  ·  ✧";position:fixed;top:10%;right:3%;color:#ee9ac2;font-size:20px;letter-spacing:12px;opacity:.45;pointer-events:none;z-index:-1}
+    .wrap{width:min(1220px,calc(100% - 36px));margin:auto}
+    header{padding:27px 0 18px}
+    .topbar{display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.01em;color:var(--deep)}
+    .brand-mark{display:grid;place-items:center;width:40px;height:40px;border-radius:14px;background:linear-gradient(145deg,#ff9bc8,#dcaeff);color:#fff;font-size:22px;box-shadow:0 8px 18px #ed9fc44d}
+    .topnote{font-size:12px;color:var(--muted);letter-spacing:.1em;text-transform:uppercase}
+    .hero{position:relative;overflow:hidden;padding:53px 30px 48px;text-align:center;border:1px solid #f7d8e8;border-radius:30px;background:linear-gradient(125deg,rgba(255,226,241,.91),rgba(250,241,255,.94) 55%,rgba(255,247,251,.95));box-shadow:var(--shadow)}
+    .hero:before,.hero:after{position:absolute;font-size:70px;opacity:.28;pointer-events:none}
+    .hero:before{content:'✿';left:4%;bottom:0;transform:rotate(-18deg);color:#d15a9b}.hero:after{content:'✧';right:7%;top:13px;color:#b687e6}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;border:1px solid #f2bfd7;border-radius:99px;padding:8px 13px;background:#fff9fdad;color:#a34176;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+    h1{font-family:'Playfair Display',serif;font-size:clamp(38px,6vw,66px);line-height:1.06;letter-spacing:-.04em;margin:19px 0 13px;color:#812b5b;font-weight:600}
+    h1 span{background:linear-gradient(95deg,#e74e98,#b47be7);background-clip:text;-webkit-background-clip:text;color:transparent}
+    .hero p{max-width:610px;margin:0 auto;color:#86677b;line-height:1.75;font-size:15px}
+    .hero-badges{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;margin-top:24px}
+    .pill{font-size:12px;padding:8px 12px;border-radius:99px;background:#fff;border:1px solid #f5d9e8;color:#87516e}
+    .toolbar{display:grid;grid-template-columns:minmax(220px,1fr) auto;gap:14px;align-items:center;margin:27px 0 16px}
+    .searchbox{display:flex;align-items:center;gap:10px;padding:0 16px;min-height:52px;background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:0 5px 18px #a8427410}
+    .searchbox svg{flex:none;color:#bd6b97}.searchbox input{width:100%;border:0;outline:0;font:inherit;font-size:14px;color:var(--ink);background:transparent}.searchbox input::placeholder{color:#b29aa9}
+    .favorite-toggle{min-height:52px;padding:0 17px;border:1px solid #f0ccde;border-radius:16px;background:#fff;color:#9d3a70;font:600 13px 'DM Sans',sans-serif;cursor:pointer;transition:.2s;white-space:nowrap}
+    .favorite-toggle:hover,.favorite-toggle.active{background:#ffedf6;border-color:#e77eb0;box-shadow:0 7px 20px #d25d9718}
+    .filters{display:flex;gap:9px;flex-wrap:wrap;margin:0 0 22px}
+    .filter{border:1px solid #efd8e5;border-radius:99px;padding:9px 14px;background:#fff;color:#8b6c7e;font:600 12px 'DM Sans',sans-serif;cursor:pointer;transition:.2s}
+    .filter:hover{border-color:#eaa0c5;color:#a13e75}.filter.active{background:linear-gradient(120deg,#f36fa9,#cc93ec);border-color:transparent;color:white;box-shadow:0 8px 18px #db73ae30}
+    .sectionline{display:flex;align-items:center;justify-content:space-between;gap:15px;margin:24px 0 15px}.sectionline h2{margin:0;font:600 25px 'Playfair Display',serif;color:#783052}.sectionline p{margin:4px 0 0;font-size:12px;color:var(--muted)}
+    .count{padding:7px 11px;border:1px solid var(--line);border-radius:99px;background:#fff;font-size:12px;color:#9c5278;white-space:nowrap}
+    .grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;padding-bottom:34px}
+    .card{min-width:0;background:#fff;border:1px solid #f2dce8;border-radius:20px;overflow:hidden;box-shadow:0 8px 25px rgba(117,45,85,.055);transition:transform .23s,box-shadow .23s;animation:rise .38s both}
+    .card:hover{transform:translateY(-5px);box-shadow:0 15px 35px rgba(117,45,85,.13)}
+    .photo{position:relative;aspect-ratio:4/5;background:linear-gradient(145deg,#fbe1ee,#eee2ff);overflow:hidden;cursor:zoom-in}
+    .photo img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .45s}.card:hover .photo img{transform:scale(1.045)}
+    .photo:after{content:'✦';position:absolute;bottom:12px;left:13px;color:white;font-size:18px;text-shadow:0 2px 9px #66254a77;pointer-events:none}
+    .heart{position:absolute;right:11px;top:11px;width:37px;height:37px;border:1px solid #ffffffa8;border-radius:50%;background:#fffdf3e8;color:#a96489;font-size:20px;display:grid;place-items:center;cursor:pointer;z-index:2;transition:.2s;box-shadow:0 4px 16px #5a25441b}
+    .heart:hover{transform:scale(1.08)}.heart.saved{color:#ec448d;background:#fff0f7}.heart.saved span{display:inline-block;transform:scale(1.05)}
+    .card-info{padding:14px 14px 15px}.card-title{display:block;margin:0 0 9px;color:#4c2d40;font-size:14px;font-weight:700;line-height:1.35}.cat{display:inline-flex;align-items:center;gap:5px;color:#ab5f88;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em}.cat:before{content:'✧';font-size:14px}
+    .empty{grid-column:1/-1;text-align:center;padding:64px 20px;background:#fff;border:1px dashed #e6bfd4;border-radius:22px;color:#966d83}.empty strong{display:block;font:600 23px 'Playfair Display',serif;margin-bottom:8px;color:#8a3b65}
+    footer{padding:25px 0 35px;text-align:center;border-top:1px solid #f2dce8;color:#9b7b90;font-size:12px;line-height:1.8}
+    .modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;padding:22px;background:rgba(45,17,37,.76);backdrop-filter:blur(9px);z-index:20}.modal.open{display:flex}
+    .viewer{position:relative;width:min(100%,980px);max-height:min(92vh,900px);display:grid;grid-template-columns:minmax(0,1.25fr) minmax(240px,.75fr);overflow:hidden;border-radius:24px;background:#fff8fc;box-shadow:0 30px 100px #210b1e80}
+    .viewer-image{min-height:360px;max-height:88vh;background:#f5dfea;display:grid;place-items:center;position:relative}.viewer-image img{width:100%;height:100%;max-height:88vh;object-fit:contain;display:block;background:#f8e7f0}
+    .viewer-info{padding:36px 27px;display:flex;flex-direction:column;align-items:flex-start;justify-content:center}.viewer-info .cat{margin-bottom:12px}.viewer-info h3{font:600 clamp(25px,3vw,38px)/1.15 'Playfair Display',serif;color:#7c2e57;margin:0 0 12px}.viewer-info p{font-size:13px;line-height:1.8;color:#8f7183;margin:0 0 22px}
+    .viewer-actions{display:flex;gap:9px;flex-wrap:wrap}.action{padding:11px 14px;border-radius:12px;border:1px solid #eec9dc;background:white;color:#91406a;font:600 12px 'DM Sans',sans-serif;cursor:pointer}.action.primary{background:#f16ba8;color:white;border-color:#f16ba8}.close,.navbtn{position:absolute;border:1px solid #ffffffaa;background:#fff;color:#7e3159;width:42px;height:42px;border-radius:50%;display:grid;place-items:center;cursor:pointer;z-index:4;box-shadow:0 5px 18px #310c2926}.close{top:13px;right:13px;font-size:22px}.navbtn{top:50%;transform:translateY(-50%);font-size:23px}.prev{left:13px}.next{right:13px}
+    .hint{font-size:11px;color:#a98599;margin:0 0 24px}.source-link{font-size:11px;color:#b15d89;margin-top:26px;text-decoration:none}.source-link:hover{text-decoration:underline}
+    @keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+    @media(max-width:950px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}.viewer{grid-template-columns:1fr .8fr}}
+    @media(max-width:650px){.wrap{width:min(100% - 24px,1220px)}header{padding-top:17px}.topnote{display:none}.hero{padding:43px 17px 38px;border-radius:24px}.hero p{font-size:13px}.toolbar{grid-template-columns:1fr}.favorite-toggle{width:100%}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.card{border-radius:15px}.card-info{padding:11px}.card-title{font-size:12px}.heart{width:34px;height:34px}.sectionline h2{font-size:22px}.viewer{grid-template-columns:1fr;max-height:94vh;overflow:auto}.viewer-image{min-height:260px;max-height:55vh}.viewer-image img{max-height:55vh}.viewer-info{padding:22px}.viewer-info h3{font-size:27px}.navbtn{top:30%;width:38px;height:38px}.close{top:10px;right:10px}}
+    @media(max-width:370px){.grid{grid-template-columns:1fr}.photo{aspect-ratio:5/4}.filters{gap:6px}.filter{padding:8px 10px}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+  </style>
+</head>
+<body>
+  <header class="wrap">
+    <div class="topbar">
+      <div class="brand"><span class="brand-mark">✦</span><span>Pink Dreamy</span></div>
+      <div class="topnote">A little sparkle for your day ✧</div>
+    </div>
+  </header>
+  <main class="wrap">
+    <section class="hero" aria-labelledby="page-title">
+      <div class="eyebrow">✧ Fashion • Fantasy • Feel-good ✧</div>
+      <h1 id="page-title">Pink Dreamy <span>Website</span></h1>
+      <p>Step into a pastel daydream filled with princess energy, runway looks, soft glam and a little bit of magic. Find your next style mood and save the pictures you love.</p>
+      <div class="hero-badges"><span class="pill">♡ Save your favourites</span><span class="pill">✧ 50+ dreamy inspirations</span><span class="pill">✿ Made for your imagination</span></div>
+    </section>
+
+    <section aria-label="Search and filter gallery">
+      <div class="toolbar">
+        <label class="searchbox" aria-label="Search gallery">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8" stroke="currentColor" stroke-width="1.8"/><path d="m16 16 4.2 4.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          <input id="search" type="search" placeholder="Search titles or categories..." autocomplete="off" />
+        </label>
+        <button id="favoritesOnly" class="favorite-toggle" type="button" aria-pressed="false">♡ Show favourites</button>
+      </div>
+      <div class="filters" id="filters" aria-label="Photo categories"></div>
+    </section>
+
+    <section aria-label="Photo gallery">
+      <div class="sectionline"><div><h2 id="galleryHeading">The dreamy gallery</h2><p>Tap any picture to see it up close.</p></div><span class="count" id="count">55 photos</span></div>
+      <div class="grid" id="gallery" aria-live="polite"></div>
+    </section>
+  </main>
+  <footer class="wrap">Designed with a little pink magic ✧<br />Photos are displayed from remote image URLs and are not bundled into this HTML file. Image availability depends on the external image host.</footer>
+
+  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="viewerTitle">
+    <div class="viewer" role="document">
+      <button class="close" id="closeModal" type="button" aria-label="Close viewer">×</button>
+      <div class="viewer-image"><img id="viewerImage" alt="" /><button class="navbtn prev" id="previous" type="button" aria-label="Previous photo">‹</button><button class="navbtn next" id="next" type="button" aria-label="Next photo">›</button></div>
+      <div class="viewer-info"><span class="cat" id="viewerCategory"></span><h3 id="viewerTitle"></h3><p>A Barbie-inspired moodboard moment — for fashion, colour, confidence and fantasy inspiration.</p><p class="hint" id="viewerPosition"></p><div class="viewer-actions"><button class="action primary" id="viewerFavorite" type="button">♡ Save favourite</button><button class="action" id="openImage" type="button">Open image URL ↗</button></div><a class="source-link" id="sourceLink" href="https://unsplash.com" target="_blank" rel="noopener noreferrer">Image host: Unsplash</a></div>
+    </div>
+  </div>
+  <script>
+    const photos = [
+  {
+    "title": "Pink Carpet Dream",
+    "category": "Pink Glam",
+    "image": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=82",
+    "source": "https://unsplash.com/s/photos/pink-glam"
+  },
+  {
+    "title": "Runway Princess",
+    "category": "Runway",
+    "image": "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=900&q=82",
+    "source": "https://unsplash.com/s/photos/runway"
+  },
+  {
+    "title": "City Pop Star",
+    "category": "Runway",
+    "image": "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=82",
+    "source": "https://unsplash.com/s/photos/runway"
+  },
+  {
+    "title": "Soft Glam Portrait",
+    "category": "Pink Glam",
+    "image": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=82",
+    "source": "https://unsplash.com/s/photos/pink-glam"
+  },
+  {
+    "title": "Dreamy Beauty",
+    "category": "Pink Glam",
+    "image": "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=900&q=82",
+    "source": "https://unsplash.com/s/photos/pink-glam"
+  },
+  {
+    "title": "Closet of Dreams",
+    "category": "Style",
+    "image": "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=900&q=82",
+    "source": "https://unsplash.com/s/photos/style"
+  },
+  {
+    "title": "Fashion Besties",
+    "category": "Style",
+    "image": "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=900&q=82",
+    "source": "https://unsplash.com/s/photos/style"
+  },
+  {
+    "title": "Chic in Pink",
+    "category": "Pink Glam",
+    "image": "https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?auto=format&fit=crop&w=900&q=82",
+    "source": "https://unsplash.com/s/photos/pink-glam"
+  },
+  {
+    "title": "Street Style Sparkle",
+    "category": "Runway",
+    "image": "https://images.unsplash.com/photo-1523398002811-999ca8dec234?auto=format&fit=crop&w=900&q=82",
+    "source": "https://unsplash.com/s/photos/runway"
+  },
+  {
+    "title": "Dollhouse Muse",
+    "category": "Pink Glam",
+    "image": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=900&q=82",
+    "source": "https://unsplash.com/s/photos/pink-glam"
+  },
+  {
+    "title": "Golden Hour Model",
+    "category": "Dreamscapes",
+    "image": "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=900&q=82",
+    "source": "https://unsplash.com/s/photos/dreamscapes"
+  },
+  {
+    "title": "Pastel Daydream",
+    "category": "Pink Glam",
+    "image": "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=900&q=82",
+    "source": "https://unsplash.com/s/photos/pink-glam"
+  },
+  {
+    "title": "Couture Star",
+    "category": "Runway",
+    "image": "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=900&q=82",
+    "source": "https://unsplash.com/s/photos/runway"
+  },
+  {
+    "title": "Fairy-Tale Look",
+    "category": "Fairycore",
+    "image": "https://images.unsplash.com/photo-1526510747491-58f928ec870f?auto=format&fit=crop&w=900&q=82",
+    "source": "https://unsplash.com/s/photos/fairycore"
+  },
+  {
+    "title": "Glittering Evening",
+    "category": "Runway",
+    "image": "https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?auto=format&fit=crop&w=900&q=82",
+    "source": "https://unsplash.com/s/photos/runway"
+  },
+  {
+    "title": "Pretty in Pastel",
+    "category": "Pink Glam",
+    "image": "https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&w=900&q=82",
+    "source": "https://unsplash.com/s/photos/pink-glam"
+  },
+  {
+    "title": "Fashion Moodboard",
+    "category": "Style",
+    "image": "https://images.unsplash.com/photo-1503341504253-dff4815485f1?auto=format&fit=crop&w=900&q=82",
+    "source": "https://unsplash.com/s/photos/style"
+  },
+  {
+    "title": "Blush Street Style",
+    "category": "Runway",
+    "image": "https://images.unsplash.com/photo-1551232864-3f0890e580d9?auto=format&fit=crop&w=900&q=82",
+    "source": "https://unsplash.com/s/photos/runway"
+  },
+  {
+    "title": "Romantic Editorial",
+    "category": "Pink Glam",
+    "image": "https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?auto=format&fit=crop&w=900&q=82",
+    "source": "https://unsplash.com/s/photos/pink-glam"
+  },
+  {
+    "title": "Lavender Fantasy",
+    "category": "Fairycore",
+    "image": "https://images.unsplash.com/photo-1539008835657-9e8e9680c956?auto=format&fit=crop&w=900&q=82",
+    "source": "https://unsplash.com/s/photos/fairycore"
+  },
+  {
+    "title": "Sparkle Season",
+    "category": "Runway",
+    "image": "https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=900&q=82",
+    "source": "https://unsplash.com/s/photos/runway"
+  },
+  {
+    "title": "Dream Closet",
+    "category": "Style",
+    "image": "https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=900&q=82",
+    "source": "https://unsplash.com/s/photos/style"
+  },
+  {
+    "title": "Garden Party Princess",
+    "category": "Fairycore",
+    "image": "https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=900&q=82",
+    "source": "https://unsplash.com/s/photos/fairycore"
+  },
+  {
+    "title": "Midnight Glam",
+    "category": "Runway",
+    "image": "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=900&q=82",
+    "source": "https://unsplash.com/s/photos/runway"
+  },
+  {
+    "title": "Sweetheart Style",
+    "category": "Pink Glam",
+    "image": "https://images.unsplash.com/photo-1512316609839-ce289d3eba0a?auto=format&fit=crop&w=900&q=82",
+    "source": "https://unsplash.com/s/photos/pink-glam"
+  },
+  {
+    "title": "Modern Princess",
+    "category": "Style",
+    "image": "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=900&q=82",
+    "source": "https://unsplash.com/s/photos/style"
+  },
+  {
+    "title": "Pink Power Look",
+    "category": "Runway",
+    "image": "https://images.unsplash.com/photo-1539533018447-63fcce2678e3?auto=format&fit=crop&w=900&q=82",
+    "source": "https://unsplash.com/s/photos/runway"
+  },
+  {
+    "title": "Casual Cute",
+    "category": "Style",
+    "image": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=82",
+    "source": "https://unsplash.com/s/photos/style"
+  },
+  {
+    "title": "Whimsical Wardrobe",
+    "category": "Fairycore",
+    "image": "https://images.unsplash.com/photo-1475180098004-ca77a66827be?auto=format&fit=crop&w=900&q=82",
+    "source": "https://unsplash.com/s/photos/fairycore"
+  },
+  {
+    "title": "Glamour Notes",
+    "category": "Pink Glam",
+    "image": "https://images.unsplash.com/photo-1495385794356-15371f348c31?auto=format&fit=crop&w=900&q=82",
+    "source": "https://unsplash.com/s/photos/pink-glam"
+  },
+  {
+    "title": "Weekend Fashion",
+    "category": "Style",
+    "image": "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=900&q=82",
+    "source": "https://unsplash.com/s/photos/style"
+  },
+  {
+    "title": "Chic Muse",
+    "category": "Runway",
+    "image": "https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?auto=format&fit=crop&w=900&q=82",
+    "source": "https://unsplash.com/s/photos/runway"
+  },
+  {
+    "title": "Silk & Satin",
+    "category": "Pink Glam",
+    "image": "https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=900&q=82",
+    "source": "https://unsplash.com/s/photos/pink-glam"
+  },
+  {
+    "title": "Ruffle Romance",
+    "category": "Fairycore",
+    "image": "https://images.unsplash.com/photo-1452860606245-08befc0ff44b?auto=format&fit=crop&w=900&q=82",
+    "source": "https://unsplash.com/s/photos/fairycore"
+  },
+  {
+    "title": "Editorial Elegance",
+    "category": "Runway",
+    "image": "https://images.unsplash.com/photo-1550614000-4895a10e1bfd?auto=format&fit=crop&w=900&q=82",
+    "source": "https://unsplash.com/s/photos/runway"
+  },
+  {
+    "title": "Color Pop Couture",
+    "category": "Runway",
+    "image": "https://images.unsplash.com/photo-1554412933-514a83d2f3c8?auto=format&fit=crop&w=900&q=82",
+    "source": "https://unsplash.com/s/photos/runway"
+  },
+  {
+    "title": "Pastel Layers",
+    "category": "Style",
+    "image": "https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&w=900&q=82",
+    "source": "https://unsplash.com/s/photos/style"
+  },
+  {
+    "title": "Runway Muse",
+    "category": "Runway",
+    "image": "https://images.unsplash.com/photo-1566206091558-7b9d4f3b5d4e?auto=format&fit=crop&w=900&q=82",
+    "source": "https://unsplash.com/s/photos/runway"
+  },
+  {
+    "title": "Soft Knit Dream",
+    "category": "Style",
+    "image": "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=900&q=82",
+    "source": "https://unsplash.com/s/photos/style"
+  },
+  {
+    "title": "Pink Satin Fantasy",
+    "category": "Pink Glam",
+    "image": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=900&q=82",
+    "source": "https://unsplash.com/s/photos/pink-glam"
+  },
+  {
+    "title": "Fairy Garden",
+    "category": "Fairycore",
+    "image": "https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=900&q=82",
+    "source": "https://unsplash.com/s/photos/fairycore"
+  },
+  {
+    "title": "Rose Wonderland",
+    "category": "Dreamscapes",
+    "image": "https://images.unsplash.com/photo-1494972308805-463bc619d34e?auto=format&fit=crop&w=900&q=82",
+    "source": "https://unsplash.com/s/photos/dreamscapes"
+  },
+  {
+    "title": "Blooming Magic",
+    "category": "Fairycore",
+    "image": "https://images.unsplash.com/photo-1498842812179-c81beecf902c?auto=format&fit=crop&w=900&q=82",
+    "source": "https://unsplash.com/s/photos/fairycore"
+  },
+  {
+    "title": "Petal Princess",
+    "category": "Fairycore",
+    "image": "https://images.unsplash.com/photo-1462275646964-a0e3386b89fa?auto=format&fit=crop&w=900&q=82",
+    "source": "https://unsplash.com/s/photos/fairycore"
+  },
+  {
+    "title": "Pastel Blossoms",
+    "category": "Dreamscapes",
+    "image": "https://images.unsplash.com/photo-1520763185298-1b434c919102?auto=format&fit=crop&w=900&q=82",
+    "source": "https://unsplash.com/s/photos/dreamscapes"
+  },
+  {
+    "title": "Flower Crown Fantasy",
+    "category": "Fairycore",
+    "image": "https://images.unsplash.com/photo-1526045612212-70caf35c14df?auto=format&fit=crop&w=900&q=82",
+    "source": "https://unsplash.com/s/photos/fairycore"
+  },
+  {
+    "title": "Pink Garden Glow",
+    "category": "Dreamscapes",
+    "image": "https://images.unsplash.com/photo-1508610048659-a06b669e3321?auto=format&fit=crop&w=900&q=82",
+    "source": "https://unsplash.com/s/photos/dreamscapes"
+  },
+  {
+    "title": "Dreamy Details",
+    "category": "Style",
+    "image": "https://images.unsplash.com/photo-1518895949257-7621c3c786d7?auto=format&fit=crop&w=900&q=82",
+    "source": "https://unsplash.com/s/photos/style"
+  },
+  {
+    "title": "Cloud Nine",
+    "category": "Dreamscapes",
+    "image": "https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=900&q=82",
+    "source": "https://unsplash.com/s/photos/dreamscapes"
+  },
+  {
+    "title": "Butterfly Dreams",
+    "category": "Fairycore",
+    "image": "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&w=900&q=82",
+    "source": "https://unsplash.com/s/photos/fairycore"
+  },
+  {
+    "title": "Starlight Muse",
+    "category": "Dreamscapes",
+    "image": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=900&q=82",
+    "source": "https://unsplash.com/s/photos/dreamscapes"
+  },
+  {
+    "title": "Fairycore Story",
+    "category": "Fairycore",
+    "image": "https://images.unsplash.com/photo-1524250502761-1ac6f2e30d43?auto=format&fit=crop&w=900&q=82",
+    "source": "https://unsplash.com/s/photos/fairycore"
+  },
+  {
+    "title": "Crystal Ballroom",
+    "category": "Runway",
+    "image": "https://images.unsplash.com/photo-1532453288672-3a27e9be9efd?auto=format&fit=crop&w=900&q=82",
+    "source": "https://unsplash.com/s/photos/runway"
+  },
+  {
+    "title": "Royal Blush",
+    "category": "Pink Glam",
+    "image": "https://images.unsplash.com/photo-1543076447-215ad9ba6923?auto=format&fit=crop&w=900&q=82",
+    "source": "https://unsplash.com/s/photos/pink-glam"
+  },
+  {
+    "title": "Ball Gown Fantasy",
+    "category": "Fairycore",
+    "image": "https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=900&q=82",
+    "source": "https://unsplash.com/s/photos/fairycore"
+  },
+  {
+    "title": "Pastel Palace",
+    "category": "Dreamscapes",
+    "image": "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=900&q=82",
+    "source": "https://unsplash.com/s/photos/dreamscapes"
+  }
+];
+    const fallbackImage = 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=80';
+    const categories = ['All', ...new Set(photos.map(p => p.category))];
+    const gallery = document.getElementById('gallery');
+    const filters = document.getElementById('filters');
+    const search = document.getElementById('search');
+    const count = document.getElementById('count');
+    const heading = document.getElementById('galleryHeading');
+    const favoritesOnlyButton = document.getElementById('favoritesOnly');
+    const modal = document.getElementById('modal');
+    let activeCategory = 'All';
+    let favoritesOnly = false;
+    let activePhotoIndex = 0;
+    let visiblePhotos = [...photos];
+    let favorites = new Set();
+    try { favorites = new Set(JSON.parse(localStorage.getItem('pinkDreamyFavorites') || '[]')); } catch { favorites = new Set(); }
+
+    function saveFavorites(){ try { localStorage.setItem('pinkDreamyFavorites', JSON.stringify([...favorites])); } catch(e) { /* local storage may be unavailable in private or embedded previews */ } }
+    function esc(value){ return String(value).replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch])); }
+    function renderFilters(){
+      filters.innerHTML = categories.map(cat => `<button class="filter ${cat === activeCategory ? 'active' : ''}" type="button" data-category="${esc(cat)}" aria-pressed="${cat === activeCategory}">${cat === 'All' ? '✧ All photos' : esc(cat)}</button>`).join('');
+      filters.querySelectorAll('button').forEach(btn => btn.addEventListener('click', () => { activeCategory = btn.dataset.category; renderFilters(); renderGallery(); }));
+    }
+    function getFilteredPhotos(){
+      const query = search.value.trim().toLowerCase();
+      return photos.filter(p => (activeCategory === 'All' || p.category === activeCategory) && (!favoritesOnly || favorites.has(p.title)) && (!query || `${p.title} ${p.category}`.toLowerCase().includes(query)));
+    }
+    function renderGallery(){
+      visiblePhotos = getFilteredPhotos();
+      count.textContent = `${visiblePhotos.length} ${visiblePhotos.length === 1 ? 'photo' : 'photos'}`;
+      heading.textContent = favoritesOnly ? 'Your favourite pictures' : activeCategory === 'All' ? 'The dreamy gallery' : `${activeCategory} collection`;
+      favoritesOnlyButton.classList.toggle('active', favoritesOnly);
+      favoritesOnlyButton.setAttribute('aria-pressed', String(favoritesOnly));
+      favoritesOnlyButton.textContent = favoritesOnly ? '♥ Showing favourites' : '♡ Show favourites';
+      if(!visiblePhotos.length){ gallery.innerHTML = `<div class="empty"><strong>No dreamy pictures found ✧</strong>Try another search or category, or save a few favourites first.</div>`; return; }
+      gallery.innerHTML = visiblePhotos.map((p, i) => `
+        <article class="card" style="animation-delay:${Math.min(i*22,250)}ms">
+          <div class="photo" data-open="${esc(p.title)}" role="button" tabindex="0" aria-label="Open ${esc(p.title)} photo">
+            <img src="${esc(p.image)}" alt="${esc(p.title)} — ${esc(p.category)} inspiration" loading="lazy" decoding="async" data-fallback="0" />
+            <button class="heart ${favorites.has(p.title) ? 'saved' : ''}" type="button" data-favorite="${esc(p.title)}" aria-label="${favorites.has(p.title) ? 'Remove' : 'Add'} ${esc(p.title)} ${favorites.has(p.title) ? 'from' : 'to'} favourites" aria-pressed="${favorites.has(p.title)}"><span>${favorites.has(p.title) ? '♥' : '♡'}</span></button>
+          </div>
+          <div class="card-info"><p class="card-title">${esc(p.title)}</p><span class="cat">${esc(p.category)}</span></div>
+        </article>`).join('');
+      gallery.querySelectorAll('.photo').forEach(el => {
+        el.addEventListener('click', e => { if(!e.target.closest('[data-favorite]')) openViewer(el.dataset.open); });
+        el.addEventListener('keydown', e => { if((e.key === 'Enter' || e.key === ' ') && !e.target.closest('[data-favorite]')){ e.preventDefault(); openViewer(el.dataset.open); } });
+      });
+      gallery.querySelectorAll('[data-favorite]').forEach(btn => btn.addEventListener('click', e => { e.stopPropagation(); toggleFavorite(btn.dataset.favorite); }));
+      gallery.querySelectorAll('img').forEach(img => img.addEventListener('error', () => {
+        if(img.dataset.fallback === '0' && img.src !== fallbackImage){ img.dataset.fallback = '1'; img.src = fallbackImage; }
+        else { img.style.display='none'; const note=document.createElement('div'); note.className='image-fallback'; note.style.cssText='position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:18px;color:#8c5275;font-size:13px;background:linear-gradient(145deg,#fbe1ee,#eee2ff)'; note.textContent='Dreamy preview unavailable'; img.parentElement.appendChild(note); }
+      }, {once:false}));
+    }
+    function toggleFavorite(title){ if(favorites.has(title)) favorites.delete(title); else favorites.add(title); saveFavorites(); renderGallery(); if(modal.classList.contains('open') && photos[activePhotoIndex]?.title === title) syncViewerFavorite(); }
+    function syncViewerFavorite(){ const p=photos[activePhotoIndex]; const isSaved=favorites.has(p.title); document.getElementById('viewerFavorite').textContent=isSaved?'♥ Saved to favourites':'♡ Save favourite'; }
+    function openViewer(title){
+      const p = photos.find(item => item.title === title); if(!p) return;
+      activePhotoIndex = photos.indexOf(p); updateViewer(); modal.classList.add('open'); document.body.style.overflow='hidden'; document.getElementById('closeModal').focus();
+    }
+    function updateViewer(){
+      const p=photos[activePhotoIndex]; document.getElementById('viewerImage').src=p.image; document.getElementById('viewerImage').alt=`${p.title} — ${p.category} inspiration`;
+      document.getElementById('viewerTitle').textContent=p.title; document.getElementById('viewerCategory').textContent=p.category;
+      document.getElementById('viewerPosition').textContent=`Photo ${activePhotoIndex+1} of ${photos.length}`;
+      document.getElementById('openImage').onclick=()=>window.open(p.image,'_blank','noopener,noreferrer');
+      document.getElementById('sourceLink').href=p.source; syncViewerFavorite();
+    }
+    function stepViewer(step){ activePhotoIndex=(activePhotoIndex+step+photos.length)%photos.length; updateViewer(); }
+    function closeViewer(){ modal.classList.remove('open'); document.body.style.overflow=''; }
+    search.addEventListener('input', renderGallery);
+    favoritesOnlyButton.addEventListener('click',()=>{favoritesOnly=!favoritesOnly;renderGallery();});
+    document.getElementById('closeModal').addEventListener('click',closeViewer);
+    document.getElementById('previous').addEventListener('click',()=>stepViewer(-1));
+    document.getElementById('next').addEventListener('click',()=>stepViewer(1));
+    document.getElementById('viewerFavorite').addEventListener('click',()=>toggleFavorite(photos[activePhotoIndex].title));
+    modal.addEventListener('click',e=>{if(e.target===modal)closeViewer();});
+    document.addEventListener('keydown',e=>{if(!modal.classList.contains('open'))return;if(e.key==='Escape')closeViewer();if(e.key==='ArrowLeft')stepViewer(-1);if(e.key==='ArrowRight')stepViewer(1);});
+    document.getElementById('viewerImage').addEventListener('error',e=>{const img=e.currentTarget;if(img.dataset.fallback!=='1'){img.dataset.fallback='1';img.src=fallbackImage;} });
+    renderFilters(); renderGallery();
+  </script>
+</body>
+</html>
